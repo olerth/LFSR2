@@ -59,7 +59,6 @@ public class LFSR {
 		int[] ret = new int[n];
 		for(int i = 0; i < n; i++) {
 			ret[i] = (int)ut();
-			//update();
 		}
 		return ret;
 	}
