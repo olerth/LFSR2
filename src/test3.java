@@ -5,27 +5,27 @@ public class test3 {
 	public static void main(String args[]) {
 		Random r = new Random();
 		ArrayList<LFSR> g = new ArrayList<LFSR>();
-		LFSR a = new LFSR(0xF,0x9L); //2⁴ //init, mask
+		LFSR a = new LFSR(0xF,0xFL); //2⁴ //init, mask
 		LFSR b = new LFSR(0xF,0xCL); //2⁴
-		LFSR c = new LFSR(0x7,0x6L); //2³
+		LFSR c = new LFSR(0x7,0xAL); //2⁵
 		LFSR d = new LFSR(0xF,0x9L); 	
-		LFSR e = new LFSR(0x7,0xCL); 
-		LFSR f = new LFSR(0x3,0x9L);
-		LFSR g1 = new LFSR(0x7,0x6L);
+//		LFSR e = new LFSR(0x7,0xCL); 
+//		LFSR f = new LFSR(0x3,0x9L);
+//		LFSR g1 = new LFSR(0x7,0x6L);
 		g.add(a); 
 		g.add(b); 
 		g.add(c); 
 		g.add(d); 
-		g.add(e);
-		g.add(f); 
-		g.add(g1); 
+//		g.add(e);
+//		g.add(f); 
+//		g.add(g1); 
 		long start = System.currentTimeMillis();
 		for(int j = 0; j < g.size(); j++) 
 			for (int i = 0; i < 1000; i++)
 				g.get(j).update();
 
 		int l = r.nextInt(g.size());
-		int[] ut = new int[1000000];
+		int[] ut = new int[10000];
 		int p = 0;
 		for (int i = 0; i < ut.length; i++) {
 			p = l;
@@ -41,7 +41,7 @@ public class test3 {
 		System.out.println("Tok "+((System.currentTimeMillis()-start)/1000.0)+" sekund");
 	}
 	public static int fun(int n) {
-		return (0x7 & n) > 6 ? 1 : 0x7&n;
+		return (0x3 & n) > 3 ? 1 : 0x1&n;
 	}
 	
 	public static int[] berlekamp_massey(int[] s) {
