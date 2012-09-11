@@ -41,7 +41,7 @@ public class test3 {
 		System.out.println("Tok "+((System.currentTimeMillis()-start)/1000.0)+" sekund");
 	}
 	public static int fun(int n) {
-		return (0x3 & n) > 3 ? 1 : 0x1&n;
+		return ((0x3 & n) > 3 ? 1 : 0x1&n) ^ 3;
 	}
 	
 	public static int[] berlekamp_massey(int[] s) {
