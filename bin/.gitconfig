@@ -1,0 +1,8 @@
+[user]
+	name = Ole Rydland Thorsen
+	email = ole.rth@gmail.com
+[push]
+	default = matching
+[color]
+	status = auto
+	branch = auto
