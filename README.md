@@ -1,3 +1,1 @@
-Hei
-HAHA
-Pikk
+Utviklings-prosjekt på UiB
